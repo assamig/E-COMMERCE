@@ -1,0 +1,239 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to right, #ff09ca, #0e75f3)
+}
+
+/* 2. NAVEGAÇÃO PRINCIPAL */
+.navbar {
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #050505;
+}
+
+
+/* Barra de busca estilizada */
+.navbar form input {
+    border-radius: 25px 0 0 25px;
+    border: 2px solid #ddd;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar form input:focus {
+    border-color: #ff9900;
+    box-shadow: 0 0 0 0.2rem rgba(255, 153, 0, 0.25);
+}
+
+.navbar form button {
+    border-radius: 0 25px 25px 0;
+    background: #ff9900;
+    border: none;
+    padding: 12px 20px;
+    transition: background 0.3s ease;
+}
+
+.navbar form button:hover {
+    background: #e68900;
+}
+
+/* Ícone do carrinho */
+.navbar .fa-shopping-cart {
+    position: relative;
+}
+
+.badge {
+    font-size: 0.7em;
+    min-width: 18px;
+    height: 18px;
+    top: -5px;
+    right: -10px;
+}
+
+
+/* 4. CARDS DE CATEGORIAS */
+
+
+.card-img-top {
+    height: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* 5. CARDS DE PRODUTOS */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-card .card-img-top {
+    height: 220px;
+    object-fit: contain;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.product-card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    height: 2.5em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+}
+
+.product-card .text-muted {
+    font-size: 0.85rem;
+}
+
+/* Preços */
+.product-card .h5.text-danger {
+    font-size: 1.4rem !important;
+    margin-right: 8px;
+}
+
+.product-card .text-decoration-line-through {
+    font-size: 0.9rem;
+}
+
+/* Botão comprar */
+.product-card .btn {
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    background: linear-gradient(45deg, #ff6b35, #f7931e);
+}
+
+.product-card .btn:hover {
+    background: linear-gradient(45deg, #e55a2b, #e68217);
+    transform: translateY(-1px);
+}
+
+/* 6. EFEITOS DE LOADING */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* 7. FOOTER */
+footer {
+    background: #232f3e;
+}
+
+footer h5, footer h6 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff9900;
+}
+
+/* 8. RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .hero-bg {
+        min-height: 400px;
+        text-align: center;
+    }
+    
+    .hero-bg .row {
+        flex-direction: column-reverse;
+    }
+    
+    .navbar form {
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .navbar form input {
+        border-radius: 25px;
+        margin-right: 10px;
+    }
+    
+    .product-card .card-img-top {
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-bg .display-4 {
+        font-size: 2rem;
+    }
+    
+    .product-card .h5.text-danger {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* 9. ANIMAÇÕES DE ENTRADA */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* 10. SCROLLBAR PERSONALIZADA */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff9900;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e68900;
+}
